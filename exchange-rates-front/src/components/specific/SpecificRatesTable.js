@@ -6,7 +6,6 @@ import { TableCell, Table, TableBody, TableContainer, TableHead, TableRow, Paper
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import StopIcon from '@material-ui/icons/Stop';
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
     table: {
@@ -37,7 +36,6 @@ export default function SpecificRatesTable() {
 
     const getCurrencyList = async () => {
         await RatesService.getCurrencyList(value.request).then((response) => {
-            console.log(`response` + JSON.stringify(response.data));
             setSpecificCcyRates(response.data);
         }).catch((error) => {
             console.log(error);

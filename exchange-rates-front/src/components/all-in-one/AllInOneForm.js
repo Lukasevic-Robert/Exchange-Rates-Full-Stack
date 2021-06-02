@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect, useContext } from 'react';
-import RatesService from '../../services/RatesService';
 import { makeStyles } from '@material-ui/core/styles';
-import { FormControl, Input, TextField, Grid, Select, InputLabel, MenuItem, Button } from '@material-ui/core';
+import { FormControl, TextField, Grid, Button } from '@material-ui/core';
 import * as moment from 'moment';
 import { ValidatorForm } from 'react-material-ui-form-validator';
 import { RatesContext } from '../../context/RatesContext';
@@ -27,42 +25,19 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
-
 export default function AllInOneForm() {
 
     const { setAllInOnerequest, refreshAllInOneRatesTable, setRefreshAllInOneRatesTable } = useContext(RatesContext);
 
     const classes = useStyles();
     const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
-    const [ccy, setCcy] = useState('');
-    const [availableCcy, setAvailableCcy] = useState([]);
 
     useEffect(() => {
-        getAvailableCurrencyList();
+
         let request = { tp: 'EU', dt: date };
         setAllInOnerequest(request);
     }, [])
 
-
-
-
-    const getAvailableCurrencyList = async () => {
-
-        await RatesService.getAvailableCurrencyList().then(response => {
-            console.log(response.data.currencyItem)
-            let tempArray = [];
-            tempArray = response.data.currencyItem;
-            tempArray.shift();
-            setAvailableCcy(tempArray);
-        })
-
-    }
-
-
-    const handleChangeCcy = (event) => {
-        setCcy(event.target.value);
-    }
 
     const handleChangeDate = (event) => {
         setDate(event.target.value)
@@ -70,7 +45,6 @@ export default function AllInOneForm() {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log('submited form')
         let request = { tp: 'EU', dt: date };
         setAllInOnerequest(request);
         setRefreshAllInOneRatesTable(!refreshAllInOneRatesTable);

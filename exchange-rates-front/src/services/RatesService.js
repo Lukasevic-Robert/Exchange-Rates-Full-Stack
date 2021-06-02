@@ -4,7 +4,6 @@ import axios from 'axios';
 const API_BASE_URL = `http://localhost:8080/api/rates`;
 
 const getCurrencyList = (params) => {
-    console.log(params)
     return axios.post(API_BASE_URL + '/getFxRatesForCurrency', params);
 }
 
