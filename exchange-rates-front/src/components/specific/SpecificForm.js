@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import RatesService from '../../services/RatesService';
 import { makeStyles } from '@material-ui/core/styles';
-import { FormControl, Input, TextField, Grid, Select, InputLabel, MenuItem, Button } from '@material-ui/core';
+import { FormControl, TextField, Grid, Select, InputLabel, MenuItem, Button } from '@material-ui/core';
 import * as moment from 'moment';
 import { ValidatorForm } from 'react-material-ui-form-validator';
 import { RatesContext } from '../../context/RatesContext';
@@ -31,7 +31,6 @@ export default function SpecificForm() {
 
     const { setRequest, setRefreshRatesTable, refreshRatesTable, requestedCcyCode } = useContext(RatesContext);
     const classes = useStyles();
-    const [rates, setRates] = useState([]);
     const [tp, setTp] = useState('EU');
     const [ccy, setCcy] = useState(requestedCcyCode);
     const [dateFrom, setDateFrom] = useState(moment().subtract(1, 'months').format("YYYY-MM-DD"));

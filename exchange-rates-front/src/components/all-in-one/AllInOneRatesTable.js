@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import RatesService from '../../services/RatesService';
 import { RatesContext } from '../../context/RatesContext';
@@ -42,8 +42,6 @@ export default function AllInOneRatesTable() {
 
     const getCurrencyList = async () => {
         await RatesService.getFxRatesForSpecificDate(value.allInOnerequest).then((response) => {
-            console.log('getCurrencyList' + JSON.stringify(response.data))
-            // value.requestedRates(response.data);
             value.setRequestedRates(response.data);
 
         }).catch((error) => {
@@ -77,7 +75,7 @@ export default function AllInOneRatesTable() {
                 <TableBody>
                     {value.requestedRates && value.requestedRates.map((row, index) => (
                         <TableRow className={classes.tableRow} key={index}>
-                            <TableCell className={classes.tableCellName} style={{ fontSize: 17, color: '#414866'}} onClick={() => handleRedirect(row.ccyCode)} component="th" scope="row">
+                            <TableCell className={classes.tableCellName} style={{ fontSize: 17, color: '#414866' }} onClick={() => handleRedirect(row.ccyCode)} component="th" scope="row">
                                 {row.ccyName}
                             </TableCell>
                             <TableCell style={{ fontSize: 17 }} align="left">{row.ccyCode}</TableCell>
