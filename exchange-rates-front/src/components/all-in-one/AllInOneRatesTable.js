@@ -23,7 +23,7 @@ const useStyles = makeStyles({
         '&:hover': {
             cursor: 'pointer',
             fontWeight: 'bold'
-        }
+        },  
     }
 });
 
@@ -76,7 +76,7 @@ export default function AllInOneRatesTable() {
                     {value.requestedRates && value.requestedRates.map((row, index) => (
                         <TableRow className={classes.tableRow} key={index}>
                             <TableCell className={classes.tableCellName} style={{ fontSize: 17, color: '#414866' }} onClick={() => handleRedirect(row.ccyCode)} component="th" scope="row">
-                                {row.ccyName}
+                                <u>{row.ccyName}</u>
                             </TableCell>
                             <TableCell style={{ fontSize: 17 }} align="left">{row.ccyCode}</TableCell>
                             <TableCell style={{ fontSize: 17 }} align="center">{row.ratio}</TableCell>

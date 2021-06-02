@@ -8,7 +8,7 @@ export default function Footer() {
         <div style={{margin: 40}}>
             <Typography variant="body2" color="primary" align="center">
                 {'Copyright © '}
-                <Link color="inherit" href="https://github.com/Lukasevic-Robert/Exchange-Rates-Full_Stack">
+                <Link color="inherit" href="https://github.com/Lukasevic-Robert/Exchange-Rates-Full-Stack">
                     Robert Lukaševič
           </Link>{' '}
                 {new Date().getFullYear()}
