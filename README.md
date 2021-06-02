@@ -15,3 +15,8 @@ _select folder the project was saved in f. ex.:_ G:\Programs\Exchange_Rates_Syst
 4. Command in the opened terminal to install required packages:  **npm i**  
 5. Command in the opened terminal to start the project: **npm start**
 6. System will open on port [3000](http://localhost:3000/)
+
+___
+
+## root page http://localhost:3000/
+Index page is "**/**" or "**/all-in-one**". Here you can see all provided currency exchange rates for specific date.
