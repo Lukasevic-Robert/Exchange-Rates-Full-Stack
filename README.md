@@ -19,4 +19,14 @@ _select folder the project was saved in f. ex.:_ G:\Programs\Exchange_Rates_Syst
 ___
 
 ## root page http://localhost:3000/
-Index page is "**/**" or "**/all-in-one**". Here you can see all provided currency exchange rates for specific date.
+Index page is "**/**" or "**/all-in-one**". Here you can see all provided currency exchange rates for specific date. By pressing on **Currency Name** redirect is activated to "**/specific**" page.
+![AllInOne](exchange-rates-front/public/screenshots/all-in-one.png)
+
+___
+
+## child page http://localhost:3000/specific
+Child page is "**/specific**". Here you can see all provided currency exchange rates for specific Currency and Time Interval - **Date From - Date To**.  
+**Back** button redirecting to "**/all-in-one**" page.
+
+
+![Specific](exchange-rates-front/public/screenshots/specific.png)
