@@ -35,7 +35,7 @@ public class RatesController {
 //		return ratesService.decodeXml(FxRatesHandling.class, URI);
 //	}
 	
-	//using xml file download instead
+	// using xml file download instead
 	@PostMapping("/getFxRatesForCurrency")
 	public List<ResponseCalculatedRates> getFxRatesForCurrency(@RequestBody RequestRatesForCurrency requestRatesForCurrency) {
 
@@ -55,7 +55,7 @@ public class RatesController {
 //	}
 	
 	
-	//using xml file download instead
+	// using xml file download instead
 	@PostMapping("/FxRates")
 	public List<ResponseCalculatedRates> getFxRates(@RequestBody RequestedRatesForSpecificDate requestedRatesForSpecificDate) {
 		Date date = ratesService.stringToDate(requestedRatesForSpecificDate.getDt());

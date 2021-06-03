@@ -27,6 +27,7 @@ public class RatesService {
 	private final String URI = "http://www.lb.lt/webservices/fxrates/FxRates.asmx";
 	private final String xmlURI = "https://www.lb.lt/lt/currency/daylyexport/?xml=1&class=Eu&type=day&date_day=";
 
+
 	@SuppressWarnings("unchecked")
 	public <T> T decodeXml(Class<T> clazz, String URI) {
 		T rates = null;
@@ -65,10 +66,14 @@ public class RatesService {
 		return pairCurrenciesList;
 	}
 
+	//tested
 	public List<SpecificDayCurrencies> toSpecificCcyPairs(SpecificDayCurrencies specificDayCurrencies) {
+		
 		List<SpecificDayCurrencies> pairCurrenciesList = new ArrayList<>();
+		
 		SpecificDayCurrencies ccyBefore = new SpecificDayCurrencies();
 		ccyBefore.setCurrencyItem(new ArrayList<>());
+		
 		SpecificDayCurrencies ccyAfter = new SpecificDayCurrencies();
 		ccyAfter.setCurrencyItem(new ArrayList<>());
 
@@ -85,6 +90,7 @@ public class RatesService {
 		return pairCurrenciesList;
 	}
 
+	//tested
 	public List<ResponseCalculatedRates> toResponseCalculatedRatesList(List<SpecificDayCurrencies> currenciesSequence) {
 
 		List<ResponseCalculatedRates> currenciesSequenceResponse = new ArrayList<>();
@@ -96,6 +102,7 @@ public class RatesService {
 		return currenciesSequenceResponse;
 	}
 
+	//tested
 	public ResponseCalculatedRates toResponseCalculatedRates(CurrencyItem before, CurrencyItem after) {
 		BigDecimal beforeRatio = new BigDecimal(before.getSantykis().replace(',', '.'));
 		BigDecimal afterRatio = new BigDecimal(after.getSantykis().replace(',', '.'));

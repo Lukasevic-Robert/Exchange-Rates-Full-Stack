@@ -75,7 +75,6 @@ export default function SpecificForm() {
         event.preventDefault();
         let request = { tp: 'EU', ccy: ccy, dtFrom: dateFrom, dtTo: dateTo };
         setRequest(request);
-        setRefreshRatesTable(!refreshRatesTable);
     }
 
 
